@@ -31,7 +31,7 @@ class AllVets extends Component{
           
           this.state.vets.length && this.state.vets.map(vet => {
             return (
-                <div>
+                <div key={vet.firstName}>
                   <img src={vet.image}/>
                   <h3>{vet.firstName}</h3>
                   <h5>{vet.address}</h5>
