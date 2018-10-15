@@ -10,7 +10,7 @@
 
 # Progress
     - User can login locally
-    - The pet model contains the species name and associates correctly with Vets and        Users
+    - The pet model contains the species name and associates correctly with Vets and Users
     - The Vet model contains an image, name and office address
     - Vet is correctly associated with Users and pets
     - You can view a list of all availaible vets 
