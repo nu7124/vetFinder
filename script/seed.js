@@ -30,13 +30,13 @@ async function seed() {
   ])
 
   const pet = await Promise.all([
-    Pet.create({species:"Dog"}),
-    Pet.create({species:"Cat"}),
-    Pet.create({species:"Bird"}),
-    Pet.create({species:"Snake"}),
-    Pet.create({species:"Hamster"}),
-    Pet.create({species:"Tiger"}),
-    Pet.create({species:"Lizard"}),
+    Pet.create({species:"dog"}),
+    Pet.create({species:"cat"}),
+    Pet.create({species:"bird"}),
+    Pet.create({species:"snake"}),
+    Pet.create({species:"hamster"}),
+    Pet.create({species:"tiger"}),
+    Pet.create({species:"lizard"}),
   ])
 
   await Promise.all([
@@ -49,7 +49,20 @@ async function seed() {
     vet[4].addPet(pet[6]),
     vet[5].addPet(pet[6]),
     vet[6].addPet(pet[5]),
-    vet[7].addPet(pet[7]),
+    vet[7].addPet(pet[6]),
+  ])
+
+  await Promise.all([
+    pet[0].addVet(vet[0]),
+    pet[1].addVet(vet[0]),
+    pet[2].addVet(vet[1]),
+    pet[3].addVet(vet[2]),
+    pet[4].addVet(vet[3]),
+    pet[5].addVet(vet[4]),
+    pet[6].addVet(vet[4]),
+    pet[6].addVet(vet[5]),
+    pet[5].addVet(vet[6]),
+    pet[6].addVet(vet[7]),
   ])
 
   await Promise.all([
