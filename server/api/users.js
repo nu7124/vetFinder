@@ -25,13 +25,13 @@ router.get('/faveVets/:userId', async (req, res, next) => {
   }
 })
 
-router.post('/like/:vetId/:userId', async (req, res, next) => {
+router.post('/like/:vetId', async (req, res, next) => {
   try {
     // console.log(req.session.passport.user)
-    let user = await User.findById(req.params.userId*1)
+    let user = await User.findById(req.session.passport.user)
     let likedVet = await Vet.findById(req.params.vetId*1)
-    user.addVet()
-    res.json(favVet)
+    user.addVet(likedVet)
+    res.json(likedVet)
   } catch (err) {
     next(err)
   }

@@ -20,7 +20,8 @@ class AllVets extends Component{
   }
 
   async likeVet(vet){
-    console.log(vet)
+    await axios.post(`/api/users/like/${vet.id}`)
+    console.log("Vet added")
   }
 
   render(){
@@ -33,6 +34,7 @@ class AllVets extends Component{
                 <div>
                   <img src={vet.image}/>
                   <h3>{vet.firstName}</h3>
+                  <h5>{vet.address}</h5>
                   <button onClick={()=>this.likeVet(vet)}>Like</button>
                 </div>
               )
