@@ -18,6 +18,7 @@
 # Future 
     - Currently working on displaying liked vets in a separate component
     - currently working on pulling associated pets for every vet
+    - Planning to implement redux for neater code
 
 
 Fullstack Academy Boilerplate
